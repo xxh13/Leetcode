@@ -1,4 +1,4 @@
-package leetcode_1_20;
+package leetcode_01_20;
 
 /**
  * Given a linked list, remove the nth node from the end of list and return its head.

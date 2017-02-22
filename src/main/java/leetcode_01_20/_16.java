@@ -1,9 +1,9 @@
-package leetcode_1_20;
+package leetcode_01_20;
 
 import java.util.Arrays;
 
 /**
- * Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target.
+ * Given an nums S of n integers, find three integers in S such that the sum is closest to a given number, target.
  * Return the sum of the three integers. You may assume that each input would have exactly one solution.
  * Created by XXH on 2017/1/18.
  */
@@ -19,7 +19,7 @@ public class _16 {
 
 
     public int threeSumClosest(int[] nums, int target) {
-        // sort the array
+        // sort the nums
         Arrays.sort(nums);
 
         //assume the sum as the closest

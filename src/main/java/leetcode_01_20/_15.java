@@ -1,4 +1,4 @@
-package leetcode_1_20;
+package leetcode_01_20;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,8 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0?
- * Find all unique triplets in the array which gives the sum of zero
+ * Given an nums S of n integers, are there elements a, b, c in S such that a + b + c = 0?
+ * Find all unique triplets in the nums which gives the sum of zero
  * Created by XXH on 2017/1/17.
  */
 public class _15 {
@@ -21,7 +21,7 @@ public class _15 {
 
     // method 1 time complexity O(n^2)
     public List<List<Integer>> threeSum(int[] nums) {
-        //sort the array
+        //sort the nums
         Arrays.sort(nums);
 
         List<List<Integer> > result = new LinkedList<>();
