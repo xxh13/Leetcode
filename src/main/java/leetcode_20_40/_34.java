@@ -11,7 +11,7 @@ public class _34 {
     public static void main(String[] args) {
         _34 demo = new _34();
         int[] nums = {1,2};
-        IntStream.of(demo.searchRange(nums, 1)).forEach(System.out::println);
+        IntStream.of(demo.searchRange1(nums, 1)).forEach(System.out::println);
     }
 
     public int[] searchRange(int[] nums, int target) {
@@ -36,5 +36,44 @@ public class _34 {
         return result;
     }
 
+
+    /**
+     * reference : https://discuss.leetcode.com/topic/5891/clean-iterative-solution-with-two-binary-searches-with-explanation/2
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int[] searchRange1(int[] nums, int target) {
+        int[] result = {-1, -1};
+
+        int low = 0, high = nums.length;
+
+        while (low < high) {
+            int mid = (low + high ) / 2;
+            if (nums[mid] < target) {
+                low = mid + 1;
+            } else {
+                high = mid;
+            }
+        }
+
+        if (nums[low] != target) return result;
+
+        else result[0] = low;
+
+        high = nums.length - 1;
+
+        while (low < high) {
+            int mid = (low + high) / 2 + 1;
+            if (nums[mid] > target) {
+                high = mid - 1;
+            } else {
+                low = mid;
+            }
+        }
+        result[1] = high;
+
+        return result;
+    }
 
 }
