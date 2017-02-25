@@ -76,7 +76,7 @@ public class Demo1 {
     }
 
     /*
-    * find the same item in 3 ordered array
+    * find the same item in 3 ordered nums
     * */
     public static List<Integer> getSameItem(int a[], int b[], int c[]){
         List<Integer> result = new ArrayList<>();

@@ -17,7 +17,7 @@ public class _26 {
     }
 
     /*
-     *   @para:nums is sorted array
+     *   @para:nums is sorted nums
      */
     public int removeDuplicates(int[] nums) {
         int length = nums.length;

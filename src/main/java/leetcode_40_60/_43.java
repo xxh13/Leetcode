@@ -1,4 +1,4 @@
-package algorithm;
+package leetcode_40_60;
 
 /**
  * to be optimized
@@ -6,7 +6,7 @@ package algorithm;
  * Given two numbers represented as strings, return multiplication of the numbers as a string.
  * Created by XXH on 2016/8/20.
  */
-public class MutiplyString {
+public class _43 {
 
     public static void main(String[] args) {
         long time1 = System.nanoTime() / 1000000;
