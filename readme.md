@@ -1,2 +1,2 @@
-leetcode上的题目解决
+solution for problems in leetcode
 
