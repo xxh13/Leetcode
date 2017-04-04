@@ -3,7 +3,7 @@ import java.util.Stack;
 public class _71{
 
     public static void main(String[] args) {
-        String path = "/a/b/../../c/";
+        String path = args[1];
         _71 demo = new _71();
         System.out.println(demo.simplifyPath(path));
     }
@@ -22,7 +22,7 @@ public class _71{
                 if (tempPath.equals("")) {
                     continue;
                 } else if (tempPath.equals(".")) {
-                    continue;
+
                 } else if (tempPath.equals("..")) {
                     if (!stack.empty()) {
                         stack.pop();
@@ -33,7 +33,14 @@ public class _71{
                 subPath = new StringBuilder();
             }
             if (pathArray[i] != '/' && i == pathArray.length - 1 && subPath.length() != 0) {
-                stack.push(subPath.toString());
+                if (subPath.toString().equals("..")){
+                    if(!stack.empty())
+                        stack.pop();
+                }else if(subPath.toString().equals(".")){
+
+                }else {
+                    stack.push(subPath.toString());
+                }
             }
         }
 
