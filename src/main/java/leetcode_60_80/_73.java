@@ -1,3 +1,5 @@
+package leetcode_60_80;
+
 public class _73 {
 
     public static void main(String[] args) {

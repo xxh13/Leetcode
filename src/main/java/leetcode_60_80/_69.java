@@ -8,7 +8,8 @@ public class _69 {
 
     public static void main(String[] args) {
         _69 demo = new _69();
-        System.out.println(demo.mySqrt(2147395599));
+        int x = Integer.parseInt(args[1]);
+        System.out.println(demo.mySqrt(x));
     }
     /**
      * binary search
@@ -16,8 +17,8 @@ public class _69 {
      * @return
      */
     public int mySqrt(int x) {
-        int low = 1, high = x;
-        int mid = 0;
+        long low = 1, high = x;
+        long mid = 0;
 
         while (low < high) {
             mid = (low + high) / 2;
@@ -26,10 +27,10 @@ public class _69 {
             }else if (mid * mid < x) {
                 low = mid + 1;
             } else {
-                return mid;
+                return (int) mid;
             }
         }
 
-        return low * low > x ? low - 1 : low;
+        return (int) (low * low > x ? low - 1 : low);
     }
 }
