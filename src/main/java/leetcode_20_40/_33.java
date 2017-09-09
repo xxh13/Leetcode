@@ -54,6 +54,7 @@ public class _33 {
 
         int low = 0, high = nums.length - 1;
 
+        // find the smallest element index
         while (low < high) {
             int mid = (low + high) / 2;
 

@@ -6,7 +6,7 @@ package leetcode_60_80;
  * In how many distinct ways can you climb to the top?
  * Created by XXH on 2016/8/20.
  */
-public class ClimbStairs {
+public class _70 {
     public int climbStairs(int n) {
         if (n == 0) return 0;
         if (n == 1) return 1;
