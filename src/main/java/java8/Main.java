@@ -20,8 +20,8 @@ public class Main {
     public static void main(String[] args) {
 
         Object list[] = new Integer[2];
-        list[0] = new Main();
-        list[1] = 10;
+//        list[0] = new Main();
+//        list[1] = 10;
 
 
 
