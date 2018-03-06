@@ -19,6 +19,8 @@ public class ArrayMerge {
         ArrayMerge am = new ArrayMerge();
         am.merge(nums1, 4, nums2, 4);
         IntStream.of(nums1).forEach(e -> System.out.print(e + " "));
+
+        System.out.println(1 >>> 1);
     }
 
 
