@@ -1,1 +1,3 @@
-hello china!
+ have a function foo which makes an Ajax request. How can I return the response from foo?
+I tried returning the value from the success callback as well as assigning the response to a local variable inside the
+function and returning that one, but none of those ways actually return the response. hello
