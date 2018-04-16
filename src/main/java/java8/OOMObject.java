@@ -1,9 +1,10 @@
 package java8;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OOMObject {
+public class OOMObject implements Serializable{
 
     public static void main(String[] args) throws Exception{
         fillHeap(1000);
@@ -16,8 +17,6 @@ public class OOMObject {
             Thread.sleep(50);
             list.add(new OMObject());
         }
-
-
     }
 
     static class OMObject {
