@@ -88,15 +88,11 @@ public class Main {
 
         byteBuffer = ByteBuffer.wrap(result);
 
+//        byteBuffer.flip();
+
         int r = byteBuffer.getInt();
 
-        System.out.println(byteBuffer.getInt());
-
-        new Thread();
-
-//        Callable
-
-//        Integer
+        System.out.println(r);
     }
 
     public static byte[] intToByteArray(int source, int size){

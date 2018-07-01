@@ -10,6 +10,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
+import java.security.Provider;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -122,23 +123,29 @@ public class TimeClientHandle implements Runnable{
     }
 
     private void doWrite(SocketChannel sc) throws IOException {
-        byte[] CTF = new byte[]{0x02};
+        byte[] CTF = new byte[]{0x03};
 
         byte[] CID = new byte[]{0x00};
 
-        byte[] UID = new byte[]{0x30, 0x30, 0x30, 0x30, 0x30, (byte) 0x30, (byte) 0x61, (byte) 0x61, (byte) 0x61, (byte) 0x61, (byte) 0x61, (byte) 0x61};
+        byte[] UID = new byte[]{0x67, 0x63, 0x66, 0x62, 0x63, (byte) 0x62, (byte) 0x61, (byte) 0x61, (byte) 0x61, (byte) 0x61, (byte) 0x61, (byte) 0x61};
 
         long time = System.currentTimeMillis();
 
         byte[] TIM = ByteUtil.long2byte(time, 8);
 
-        byte[] LEN = new byte[]{0x01};
+        byte[] LEN = new byte[]{0x0C};
 
-        byte[] data = new byte[]{0x01};
+        byte[] data = new byte[]{0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01};
 
         ProbePacket packet = new ProbePacket(CTF, CID, UID, TIM, LEN, data);
 
         byte[] req = packet.convert2bytearray();
+
+//        try {
+//            Thread.sleep(5 * 1000);
+//        } catch (InterruptedException e) {
+//
+//        }
 
         ByteBuffer writeBuffer = ByteBuffer.allocate(req.length);
         writeBuffer.put(req);
