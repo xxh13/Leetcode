@@ -4,12 +4,11 @@ import java.nio.ByteBuffer;
 import java.time.Clock;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Future;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 //import static java.util.function.IntUnaryOperator.identity;
@@ -47,12 +46,12 @@ public class Main {
 
         sequence.forEach(System.out::println);*/
 
-        Optional<String> fullName = Optional.ofNullable( null );
-        System.out.println("full name is set ?" + fullName.isPresent() );
-
-        List< Optional<String> > optionalList = new ArrayList<>();
-        optionalList.add(Optional.of("tom"));
-        optionalList.add(Optional.ofNullable( null ));
+//        Optional<String> fullName = Optional.ofNullable( null );
+//        System.out.println("full name is set ?" + fullName.isPresent() );
+//
+//        List< Optional<String> > optionalList = new ArrayList<>();
+//        optionalList.add(Optional.of("tom"));
+//        optionalList.add(Optional.ofNullable( null ));
 
         // Get the zoned date/time
 
@@ -72,27 +71,37 @@ public class Main {
 
         System.out.println( zonedDatetimeFromZone );*/
 
-        Stream<String> names = Stream.of("Lam", "Okanbi", "Oduduwa");
-
-        Optional<String> tmp = names.filter(name -> name.startsWith("L")).findFirst();
-
-        tmp.ifPresent(
-                    System.out::println
-              );
-
-        intToByteArray(100, 1);
-
-        ByteBuffer byteBuffer = ByteBuffer.allocate(4);
-        byteBuffer.putInt(1000);
-        byte[] result = byteBuffer.array();
-
-        byteBuffer = ByteBuffer.wrap(result);
+//        Stream<String> names = Stream.of("Lam", "Okanbi", "Oduduwa");
+//
+//        Optional<String> tmp = names.filter(name -> name.startsWith("L")).findFirst();
+//
+//        tmp.ifPresent(
+//                    System.out::println
+//              );
+//
+//        intToByteArray(100, 1);
+//
+//        ByteBuffer byteBuffer = ByteBuffer.allocate(4);
+//        byteBuffer.putInt(1000);
+//        byte[] result = byteBuffer.array();
+//
+//        byteBuffer = ByteBuffer.wrap(result);
 
 //        byteBuffer.flip();
 
-        int r = byteBuffer.getInt();
+//        int r = byteBuffer.getInt();
 
-        System.out.println(r);
+//        Map<Character, Integer> map = Stream.of("qweqewqcs".toCharArray())
+//		        .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+	    char[] arr = "dasdewqeq".toCharArray();
+	    Map<Character, Long> map = IntStream.range(0, arr.length).mapToObj(i -> arr[i]).
+			    collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+	    for (Map.Entry<Character, Long> entry : map.entrySet()) {
+		    System.out.println(entry.getKey() + " : " + entry.getValue());
+	    }
+//        System.out.println(r);
     }
 
     public static byte[] intToByteArray(int source, int size){
