@@ -6,6 +6,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -94,14 +95,25 @@ public class Main {
 //        Map<Character, Integer> map = Stream.of("qweqewqcs".toCharArray())
 //		        .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
-	    char[] arr = "dasdewqeq".toCharArray();
-	    Map<Character, Long> map = IntStream.range(0, arr.length).mapToObj(i -> arr[i]).
-			    collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+//	    char[] arr = "dasdewqeq".toCharArray();
+//	    Map<Character, Long> map = IntStream.range(0, arr.length).mapToObj(i -> arr[i]).
+//			    collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+//
+//	    for (Map.Entry<Character, Long> entry : map.entrySet()) {
+//		    System.out.println(entry.getKey() + " : " + entry.getValue());
+//	    }
 
-	    for (Map.Entry<Character, Long> entry : map.entrySet()) {
-		    System.out.println(entry.getKey() + " : " + entry.getValue());
-	    }
+	    Map<String, String> dict = new ConcurrentHashMap<>(4);
+	    dict.put("1", "1");
+	    dict.put("2", "1");
+	    dict.put("3", "1");
+	    dict.put("4", "1");
+	    dict.put("5", "1");
+	    dict.put("6", "1");
+	    dict.put("7", "1");
 //        System.out.println(r);
+
+	    System.out.println(Integer.numberOfLeadingZeros(10));
     }
 
     public static byte[] intToByteArray(int source, int size){

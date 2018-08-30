@@ -49,7 +49,7 @@ public class BSTIterator {
     public int next() {
         TreeNode current = path.remove(0);
 
-        //如果是右节点，将右节点的所有做节点加入路径
+        //如果是右节点，将右节点的所有左节点加入路径
         TreeNode rightNode = current.right;
         while (rightNode != null) {
             path.add(0, rightNode);
