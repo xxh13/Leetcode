@@ -2,8 +2,9 @@ package leetcode_170_200;
 
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.util.Map;
-import java.util.TreeMap;
+import java.util.Scanner;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -35,5 +36,20 @@ public class _242 {
 
 
 		return sMap.equals(tMap);
+	}
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		long n = scanner.nextLong();
+		char[] array = Long.toBinaryString(n).toCharArray();
+
+		int count = 0;
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] == '1') {
+				count++;
+			}
+		}
+
+		System.out.println(count);
 	}
 }
