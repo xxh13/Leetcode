@@ -2,7 +2,6 @@ package leetcode_170_200;
 
 import org.junit.Test;
 
-import java.time.LocalDate;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.function.Function;
