@@ -1,7 +1,7 @@
 package baidu;
 
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -42,16 +42,18 @@ public class PreTreeNode {
 				if (node.parent.left == null) {
 					return node.parent;
 				}
-				List<TreeNode> list = inorder(node.parent.left);
+				List<TreeNode> list = new LinkedList<>();
+				inorder(node.parent.left, list);
 				return list.get(list.size() - 1);
 			}
 		}
 	}
 
-	public static List<TreeNode> inorder(TreeNode root) {
-		List<TreeNode> list = new ArrayList<>();
-
-		return list;
+	private static void inorder(TreeNode root, List<TreeNode> list) {
+		if (root == null) return;
+		inorder(root.left, list);
+		list.add(root);
+		inorder(root.right, list);
 	}
 
 	private static class TreeNode {
