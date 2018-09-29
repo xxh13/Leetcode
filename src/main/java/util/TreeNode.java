@@ -21,7 +21,7 @@ public class TreeNode {
     	return getRoot(values, 0);
     }
 
-	public static TreeNode getRoot(Integer[] values, int i) {
+	private static TreeNode getRoot(Integer[] values, int i) {
     	if (i >= values.length || values[i] == null) {
     		return null;
 	    }
