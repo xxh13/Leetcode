@@ -114,34 +114,16 @@ public class Main {
 //        System.out.println(r);
 
 	    System.out.println(Integer.numberOfLeadingZeros(10));
+
+
+	    final String hello = "Hello";
+	    String lo = "lo";
+	    System.out.println(hello == "Hello");
+	    System.out.println(Other.hello == hello);
+	    System.out.println(hello == ("Hel"+"lo"));
+	    System.out.println(hello == ("Hel"+lo));
+	    System.out.println(hello == ("Hel"+lo).intern());
     }
 
-    public static byte[] intToByteArray(int source, int size){
-        byte[] result = new byte[size];
-        int index = result.length - 1;
-        while(source > 0){
-            int remain = source % 256;
-            result[index] = (byte) remain;
-            source = source / 256;
-            index--;
-        }
-
-        return result;
-    }
-
-    public static int byteArrayToInt(byte[] source){
-        if(source.length > 8){
-            return -1;
-        }
-        int power = 1;
-        int length = source.length;
-        int result = 0;
-        for (int i=length - 1; i >= 0; i--) {
-            int base = (int)source[i] & 0x000000ff;
-            result += base * power;
-            power*=256;
-        }
-        return result;
-    }
-
+	private static class Other { static String hello = "Hello"; }
 }
