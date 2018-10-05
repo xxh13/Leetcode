@@ -116,9 +116,9 @@ public class Main {
 	    System.out.println(Integer.numberOfLeadingZeros(10));
 
 
-	    final String hello = "Hello";
+	    String hello = new String("Hello");
 	    String lo = "lo";
-	    System.out.println(hello == "Hello");
+	    System.out.println(hello.intern() == "Hello");
 	    System.out.println(Other.hello == hello);
 	    System.out.println(hello == ("Hel"+"lo"));
 	    System.out.println(hello == ("Hel"+lo));
