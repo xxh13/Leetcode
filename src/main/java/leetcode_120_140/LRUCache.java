@@ -77,6 +77,7 @@ public class LRUCache {
 
 	}
 
+	//the child class needs to override this method to implements their own evict strategy
 	protected void evict() {
 		Entry e = this.head;
 		int i = 0;
